@@ -8,9 +8,10 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+	    backgroundColor: "white"
       }}
     >
-     <Link href="/onboarding">onboarding</Link>
+      <Image source={require("../assets/images/logo.png")} style={{width: width/2, height: height/2}} contentFit="contain"/>
     </View>
   );
 }
