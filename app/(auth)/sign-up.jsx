@@ -1,18 +1,18 @@
+import { useSignUp } from "@clerk/clerk-expo";
+import { LinearGradient } from "expo-linear-gradient";
+import { Link, useRouter } from "expo-router";
 import * as React from "react";
 import {
+  ActivityIndicator,
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  StyleSheet,
-  KeyboardAvoidingView,
-  Platform,
-  Modal,
-  ActivityIndicator,
 } from "react-native";
-import { useSignUp } from "@clerk/clerk-expo";
-import { Link, useRouter } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function SignUpScreen() {
@@ -59,6 +59,7 @@ export default function SignUpScreen() {
       await signUp.create({
         emailAddress,
         password,
+        username: emailAddress.split("@")[0],
       });
 
       await signUp.prepareEmailAddressVerification({
@@ -96,7 +97,7 @@ export default function SignUpScreen() {
 
       if (signUpAttempt.status === "complete") {
         await setActive({ session: signUpAttempt.createdSessionId });
-        router.replace("/");
+        router.replace("/Home");
       } else {
         setError("Verification failed. Please check the code and try again.");
         setModalVisible(true);
@@ -164,7 +165,10 @@ export default function SignUpScreen() {
             <Text style={styles.subtitle}>Create your account</Text>
 
             <TextInput
-              style={[styles.input, error && !emailAddress && styles.inputError]}
+              style={[
+                styles.input,
+                error && !emailAddress && styles.inputError,
+              ]}
               placeholder="Email"
               placeholderTextColor="#ccc"
               autoCapitalize="none"
@@ -201,7 +205,10 @@ export default function SignUpScreen() {
               <Link href="/sign-in" asChild>
                 <TouchableOpacity disabled={loading}>
                   <Text
-                    style={[styles.linkText, loading && styles.linkTextDisabled]}
+                    style={[
+                      styles.linkText,
+                      loading && styles.linkTextDisabled,
+                    ]}
                   >
                     Sign in
                   </Text>

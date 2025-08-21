@@ -1,9 +1,9 @@
 import { useAuth } from "@clerk/clerk-expo";
 import { Image } from "expo-image";
+import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, useRouter } from "expo-router";
 import { useEffect, useRef } from "react";
-import { Text, View, Dimensions, Animated, StyleSheet } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
+import { Animated, Dimensions, StyleSheet, View } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
@@ -32,7 +32,7 @@ export default function Index() {
   }, [isSignedIn, router, fadeAnim]);
 
   if (isSignedIn) {
-    return <Redirect href="/" />;
+    return <Redirect href="/Home" />;
   }
 
   return (

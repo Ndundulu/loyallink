@@ -1,19 +1,19 @@
 import { useSignIn } from "@clerk/clerk-expo";
+import { LinearGradient } from "expo-linear-gradient";
 import { Link, useRouter } from "expo-router";
+import { useState } from "react";
 import {
+  ActivityIndicator,
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  KeyboardAvoidingView,
-  Platform,
-  StyleSheet,
-  Modal,
-  ActivityIndicator,
 } from "react-native";
-import React, { useState } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { LinearGradient } from "expo-linear-gradient";
 
 export default function Page() {
   const { signIn, setActive, isLoaded } = useSignIn();
@@ -46,9 +46,11 @@ export default function Page() {
 
       if (signInAttempt.status === "complete") {
         await setActive({ session: signInAttempt.createdSessionId });
-        router.replace("/");
+        router.replace("/Home");
       } else {
-        setError("Sign-in failed. Please check your credentials and try again.");
+        setError(
+          "Sign-in failed. Please check your credentials and try again."
+        );
         setModalVisible(true);
       }
     } catch (err) {
@@ -165,7 +167,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 18,
     color: "#f0f0f0",
- serial: true,
+    serial: true,
     marginBottom: 32,
     opacity: 0.8,
   },
