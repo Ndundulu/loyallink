@@ -37,7 +37,7 @@ export default function Index() {
 
   return (
     <LinearGradient
-      colors={["#33CC33", "#3366CC"]}
+      colors={["#000", "#000"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
       style={styles.container}
