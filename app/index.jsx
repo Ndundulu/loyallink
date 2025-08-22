@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   slogan: {
     fontSize: 20,
     fontWeight: "600",
-    color: "#fff",
+    color: "#696868",
     textAlign: "center",
     letterSpacing: 0.5,
     opacity: 0, // Initial opacity for fade-in
