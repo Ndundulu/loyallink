@@ -96,7 +96,7 @@ export default function SignUpScreen() {
 
       if (signUpAttempt.status === "complete") {
         await setActive({ session: signUpAttempt.createdSessionId });
-        router.replace("/");
+        router.replace("(tabs)/Home");
       } else {
         setError("Verification failed. Please check the code and try again.");
         setModalVisible(true);

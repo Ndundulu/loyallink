@@ -46,7 +46,7 @@ export default function Page() {
 
       if (signInAttempt.status === "complete") {
         await setActive({ session: signInAttempt.createdSessionId });
-        router.replace("/");
+        router.replace("(tabs)/Home");
       } else {
         setError("Sign-in failed. Please check your credentials and try again.");
         setModalVisible(true);
@@ -70,7 +70,7 @@ export default function Page() {
 
   return (
     <LinearGradient
-      colors={["#33CC33", "#3366CC"]}
+      colors={["#000", "#000"]}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
       style={[styles.container, { paddingTop: insets.top }]}
