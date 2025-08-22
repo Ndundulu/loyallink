@@ -1,5 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { Pressable } from "react-native";
 
 export default function Layout() {
   return (
@@ -9,15 +10,30 @@ export default function Layout() {
         tabBarActiveTintColor: "#007AFF",
         tabBarInactiveTintColor: "#8E8E93",
         tabBarStyle: {
-          display: "flex",
-          backgroundColor: "white",
+          position: "absolute",
+          bottom: 20,
+          left: 20,
+          right: 20,
+          elevation: 0,
+          backgroundColor: "transparent",
+          borderTopWidth: 0,
+          height: 60,
         },
+        tabBarButton: (props) => (
+          <Pressable
+            {...props}
+            android_ripple={{ color: "transparent" }}
+            style={({ pressed }) => [
+              props.style,
+              { opacity: pressed ? 1 : 1 }
+            ]}
+          />
+        ),
       }}
     >
       <Tabs.Screen
         name="Home"
         options={{
-          title: "Home",
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
@@ -27,7 +43,6 @@ export default function Layout() {
       <Tabs.Screen
         name="Search"
         options={{
-          title: "Search",
           tabBarLabel: "Search",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="search" size={size} color={color} />
@@ -37,7 +52,6 @@ export default function Layout() {
       <Tabs.Screen
         name="Profile"
         options={{
-          title: "Profile",
           tabBarLabel: "Profile",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person" size={size} color={color} />
