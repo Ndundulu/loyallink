@@ -11,7 +11,7 @@ const SearchBar = () => {
         <TextInput
           onPress={() => {}}
           style={styles.input}
-          placeholder="Confirm yours partner?"
+          placeholder="Confirm your partners?"
           placeholderTextColor="#666"
         />
       </View>
