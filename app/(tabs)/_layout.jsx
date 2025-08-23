@@ -35,9 +35,7 @@ export default function Layout() {
         name="Home"
         options={{
           tabBarLabel: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={size} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} />
         }}
       />
       <Tabs.Screen
