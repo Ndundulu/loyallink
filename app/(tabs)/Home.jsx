@@ -11,7 +11,7 @@ const HomeScreen = () => {
                 style={{width: 350, height: 350,}}
             />
             <View>
-	    <Text>testing changes</Text>
+	    <Text>testing</Text>
                 <Greeting/>
             </View>
             <View>
