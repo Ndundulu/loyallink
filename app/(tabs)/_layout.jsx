@@ -41,15 +41,6 @@ export default function Layout() {
         }}
       />
       <Tabs.Screen
-        name="Search"
-        options={{
-          tabBarLabel: "Search",
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
         name="Profile"
         options={{
           tabBarLabel: "Profile",

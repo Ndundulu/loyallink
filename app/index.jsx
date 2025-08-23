@@ -32,7 +32,7 @@ export default function Index() {
   }, [isSignedIn, router, fadeAnim]);
 
   if (isSignedIn) {
-    return <Redirect href="/Home" />;
+    return <Redirect href="/home" />;
   }
 
   return (
