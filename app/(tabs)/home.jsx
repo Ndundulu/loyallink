@@ -1,8 +1,8 @@
 import { Image, View } from 'react-native';
 import React from 'react';
-import Greeting from '../Components/greeting';
-import SearchBar from '../Components/searchBar';
-import {SignOutButton} from '../Components/SignOutButton'
+import Greeting from '../components/greeting';
+import SearchBar from '../components/searchBar';
+import {SignOutButton} from '../components/SignOutButton'
 const HomeScreen = () => {
     return (
         <View style={{justifyContent:'center', alignItems:'center'}}>
@@ -11,7 +11,7 @@ const HomeScreen = () => {
                 style={{width: 350, height: 350,}}
             />
             <View>
-	    <Text>testing</Text>
+
                 <Greeting/>
             </View>
             <View>
